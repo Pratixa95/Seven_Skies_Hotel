@@ -1,26 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body
-{
-    font-size: 14px;
-    font-family: poppins, sans-serif;
+body {
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.logo
-{
-    height: 80px;
+
+/* Navbar */
+.logo {
+  height: 80px;
 }
-.navbar
-{
-    background-color: black;
+.navbar {
+  background-color: black;
 }
-.nav-link
-{
-    color: white;
-    font-size: 20px;
-    margin: 10px;
+.nav-link {
+  color: white;
+  font-size: 20px;
+  margin: 10px;
 }
-.nav-link:hover
-{
-    color: gold;
-    
+.nav-link:hover {
+  color: gold;
+}
+
+/* Slider */
+.slider {
+  width: 100%;
+  height: 60vh; /* full screen height */
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 500%; /* 5 images = 500% */
+  height: 100%;
+  animation: slide 20s infinite;
+}
+
+.slideImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animation */
+@keyframes slide {
+  0%   { margin-left: 0; }
+  20%  { margin-left: 0; }
+  25%  { margin-left: -100%; }
+  40%  { margin-left: -100%; }
+  45%  { margin-left: -200%; }
+  60%  { margin-left: -200%; }
+  65%  { margin-left: -300%; }
+  80%  { margin-left: -300%; }
+  85%  { margin-left: -400%; }
+  100% { margin-left: 0; }
+}
+
+/* Navigation Dots */
+.navigation {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.bar {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.bar:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.room-thumbnail {
+  width: 350px;       /* Thumbnail size */
+  height: 250px;
+  object-fit: cover;  /* Crop without stretching */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.banquetImg {
+  max-height: 500px;   /* Keep a uniform height */
+  object-fit: cover;   /* Crop neatly */
 }
