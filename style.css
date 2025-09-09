@@ -10,22 +10,34 @@ body {
 }
 
 /* Navbar */
-.navbar
-{
+.navbar {
   background-color: black;
 }
+
 .logo {
   height: 50px;
 }
+
 .nav-link {
   color: white !important;
-  font-size: 20px;
-  /* margin: 10px; */
-  /* padding: 10px; */
+  font-size: 18px;
+  margin-left: 20px; /* space between menu items */
+  padding: 10px 5px; /* optional padding for click area */
 }
+
 .nav-link:hover {
   color: gold !important;
 }
+.navbar-toggler {
+  border-color: white; /* optional: change border color */
+}
+
+.navbar-toggler-icon {
+  filter: invert(1); /* makes the default icon white */
+}
+
+
+
 
 /* Slider */
 .slider {
@@ -33,30 +45,45 @@ body {
   height: 60vh;
   overflow: hidden;
   position: relative;
+  background: #000;
 }
+
 .slides {
   display: flex;
-  width: 500%;
+  width: 100%;   /* 5 slides */
   height: 100%;
   animation: slide 20s infinite;
 }
-.slideImg {
-  width: 100%;
-  object-fit: cover;
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  background-size: cover;      /* fill container without distortion */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Slider Animation */
+/* Background images */
+.slide1 { background-image: url("slider1.jpg"); }
+.slide2 { background-image: url("slider2.jpg"); }
+.slide3 { background-image: url("slider3.jpg"); }
+.slide4 { background-image: url("slider4.jpg"); }
+.slide5 { background-image: url("slider5.jpeg"); }
+
+/* Animation */
 @keyframes slide {
-  0%, 20%   { margin-left: 0; }
-  25%, 40%  { margin-left: -100%; }
-  45%, 60%  { margin-left: -200%; }
-  65%, 80%  { margin-left: -300%; }
-  85%, 100% { margin-left: -400%; }
+  0%, 20%   { transform: translateX(0); }
+  25%, 40%  { transform: translateX(-100%); }
+  45%, 60%  { transform: translateX(-200%); }
+  65%, 80%  { transform: translateX(-300%); }
+  85%, 100% { transform: translateX(-400%); }
 }
+
+
 
 .banquet-img {
-  width: 300px;             /* fixed size for circle */
-  height: 300px;            /* equal height to make square */
+  width: 250px;             /* fixed size for circle */
+  height: 250px;            /* equal height to make square */
   object-fit: cover;        /* crop image nicely */
   border-radius: 50%;       /* full circle */
   margin: 20px auto 0;      /* center inside card */
@@ -73,6 +100,8 @@ body {
   transform: scale(1.05);
 }
 
+
+/* footer section */
 .footer {
   background: black;
   color: #ccc;
@@ -96,7 +125,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #007bff;
+  color: gold;
 }
 
 .footer .social-icons a {
@@ -106,12 +135,11 @@ body {
 }
 
 .footer .social-icons a:hover {
-  color: #007bff;
+  color: gold;
 }
 
 .footer-divider {
-  border-top: 1px solid #444;
-  margin: 20px 0;
+  border-top: 1px solid #999494;
 }
 
 /* Responsive tweaks */
