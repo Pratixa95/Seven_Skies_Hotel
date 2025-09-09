@@ -1,94 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+html {
+  scroll-behavior: smooth; /* Smooth scrolling */
+  scroll-padding-top: 90px; /* Adjust based on your navbar height */
+}
 
 body {
-  font-size: 14px;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 /* Navbar */
-.logo {
-  height: 80px;
-}
-.navbar {
+.navbar
+{
   background-color: black;
 }
+.logo {
+  height: 50px;
+}
 .nav-link {
-  color: white;
+  color: white !important;
   font-size: 20px;
-  margin: 10px;
+  /* margin: 10px; */
+  /* padding: 10px; */
 }
 .nav-link:hover {
-  color: gold;
+  color: gold !important;
 }
 
 /* Slider */
 .slider {
   width: 100%;
-  height: 60vh; /* full screen height */
-  position: relative;
+  height: 60vh;
   overflow: hidden;
+  position: relative;
 }
-
 .slides {
   display: flex;
-  width: 500%; /* 5 images = 500% */
+  width: 500%;
   height: 100%;
   animation: slide 20s infinite;
 }
-
 .slideImg {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
-/* Animation */
+/* Slider Animation */
 @keyframes slide {
-  0%   { margin-left: 0; }
-  20%  { margin-left: 0; }
-  25%  { margin-left: -100%; }
-  40%  { margin-left: -100%; }
-  45%  { margin-left: -200%; }
-  60%  { margin-left: -200%; }
-  65%  { margin-left: -300%; }
-  80%  { margin-left: -300%; }
-  85%  { margin-left: -400%; }
-  100% { margin-left: 0; }
+  0%, 20%   { margin-left: 0; }
+  25%, 40%  { margin-left: -100%; }
+  45%, 60%  { margin-left: -200%; }
+  65%, 80%  { margin-left: -300%; }
+  85%, 100% { margin-left: -400%; }
 }
 
-/* Navigation Dots */
-.navigation {
-  position: absolute;
-  width: 100%;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-.bar {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: white;
-  opacity: 0.6;
-  cursor: pointer;
-}
-.bar:hover {
-  opacity: 1;
-  transform: scale(1.2);
+.banquet-img {
+  width: 300px;             /* fixed size for circle */
+  height: 300px;            /* equal height to make square */
+  object-fit: cover;        /* crop image nicely */
+  border-radius: 50%;       /* full circle */
+  margin: 20px auto 0;      /* center inside card */
+  display: block;
+  border: 4px solid #fff;   /* optional white border */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* optional shadow */
 }
 
-.room-thumbnail {
-  width: 350px;       /* Thumbnail size */
-  height: 250px;
-  object-fit: cover;  /* Crop without stretching */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+/* Gallery */
+.gallery-img {
+  transition: 0.4s;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
 }
 
-.banquetImg {
-  max-height: 500px;   /* Keep a uniform height */
-  object-fit: cover;   /* Crop neatly */
+.footer {
+  background: black;
+  color: #ccc;
+}
+
+.footer-logo {
+  width: 100px;
+}
+
+.footer h5 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #007bff;
+}
+
+.footer .social-icons a {
+  color: #ccc;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-divider {
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .slider { height: 40vh; }
+  .room-thumbnail { height: 200px; }
 }
