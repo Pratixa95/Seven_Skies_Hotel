@@ -2,6 +2,9 @@ html {
   scroll-behavior: smooth; /* Smooth scrolling */
   scroll-padding-top: 90px; /* Adjust based on your navbar height */
 }
+section {
+  scroll-margin-top: 300px; /* adjust based on your navbar height */
+}
 
 body {
   font-family: 'Poppins', sans-serif;
